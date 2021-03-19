@@ -12,20 +12,25 @@ const InnerWrapper = styled.div`
     background: ${Colors.white};
     `;
 
-const RightIcons = styled.div``;
+const RightIcons = styled.div`
+    text-align: right;
+`;
 
-const InputWrapper = styled.div``;
+const InputWrapper = styled.div`
+    
+`;
 
 export const TopBar: FC = () => {
     return(
         <Wrapper>
             <InnerWrapper>
-                <img src="./media/icons/logo.png"/>
+                <img src="./media/icons/house2.png"/>Home
+                <img src="./media/icons/arrow-down.png"/>
                 <div>
-            
+                    {/* <ExpendedMenu/> */}
                 </div>
                 <InputWrapper>
-                <input type="text"/>
+                <input type="text" placeholder="Search LegalCluster"/>
                 <img src="./media/icons/search.png"/>
                 </InputWrapper>
                 <RightIcons>

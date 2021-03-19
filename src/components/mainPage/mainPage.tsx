@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { TopBar } from '../topBar/topBar';
-// import { LeftMenu } from '../leftMenu/leftMenu';
+import { LeftMenu } from '../leftMenu/leftMenu';
 
 const Wrapper = styled.div``;
 
@@ -17,7 +17,7 @@ const MainPage: FC = () => {
         <Wrapper>
             <TopBar />
                 <Content>
-                    {/* <LeftMenu/> */}
+                    <LeftMenu/>
                     <div>content</div>
                 </Content>
         </Wrapper>
