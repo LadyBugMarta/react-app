@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Reset } from 'styled-reset';
+import MainPage from './components/mainPage/mainPage';
+
 
 ReactDOM.render(
-    <App />,
+  <>
+    <Reset/> {/* dodaje style resetujace */}
+    <MainPage/>
+  </>,
   document.getElementById('root')
 );
 
