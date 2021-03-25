@@ -19,6 +19,7 @@ const MainPage: FC = () => {
                 <Content>
                     <LeftMenu/>
                     <div>content</div>
+                    <img src="./media/icons/logo.png"/>
                 </Content>
         </Wrapper>
     )
