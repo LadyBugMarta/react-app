@@ -28,6 +28,15 @@ const CustomImg = styled.img`
 `;
 
 export const TopBar: FC = () => {
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+    // wrapperRef - można otworzyć
+    // dropdownOpen - boolen, czy dropdown jest otwarty czy zamknięty
+    // toggleDropdown - metoda do otwierania i zamykania naprzemiennie danego dropdownu
+
+    const menuHandler = () => {
+        toggleDropdown();
+    }
+
     return(
         <Wrapper>
             <InnerWrapper>
@@ -45,33 +54,29 @@ export const TopBar: FC = () => {
                     <img src="./media/icons/comments.png" alt="comments" style={{margin:5, border:'1px solid gray', borderRadius: 50, padding: 5}}/>
                     <img src="./media/icons/bell.png" alt="bell" style={{margin:5, border:'1px solid gray', borderRadius: 50, padding: 5}}/>
                 </RightIcons>
+
+                <div ref={wrapperRef}> 
+                        <div onClick={menuHandler}>
+                            
+                        </div>
+                        {dropdownOpen  
+                            // && <expandedMenu/>
+                        }
+                    </div>
             </InnerWrapper>
         </Wrapper>
     )
 }
 
 export const ExpandMenu: FC = props => {
-    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
-
-    const menuHandler = () => {
-        toggleDropdown();
-    }
+    
         return(
             <Wrapper>
                 <InnerWrapper>
                     <CustomImg src="./media/icons/logo.png" alt="logo" />
-
-                    <div ref={wrapperRef}>
-                        <div onClick={menuHandler}>
-                            domek, home, strzałeczka
-                        </div>
-                        {dropdownOpen  
-                            // && <expandedMenu/>
-                        }
-                    </div>
                 </InnerWrapper>
             </Wrapper>
         )
-    }
+}
 
 
