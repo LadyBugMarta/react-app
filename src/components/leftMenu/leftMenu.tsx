@@ -44,7 +44,7 @@ export const LeftMenu: FC = () => {
             <InnerWrapper>
             <Shadow>
             <Name>Humberta Swift</Name><br/>
-            <Company>Job title - Company</Company>
+            <Company>Job title - Company</Company><hr/>
                 <LeftIcons>
                 <img src="./media/icons/people.png" alt="people" style={{margin:5}} />Your network
                 <img src="./media/icons/user-plus.png" alt="user-plus" style={{marginLeft:102, border:'1px solid black', padding: 5}}/><br/>

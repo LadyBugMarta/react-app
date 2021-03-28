@@ -12,6 +12,7 @@ const InnerWrapper = styled.div`
     background: ${Colors.white};
     display: flex;
     align-items: center;
+    cursor: pointer;
     `;
 
 const RightIcons = styled.div`
@@ -27,7 +28,8 @@ const CustomImg = styled.img`
 
 `;
 
-export const TopBar: FC = () => {
+
+export const TopBar: FC = props => {
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
     // wrapperRef - można otworzyć
     // dropdownOpen - boolen, czy dropdown jest otwarty czy zamknięty
@@ -40,6 +42,16 @@ export const TopBar: FC = () => {
     return(
         <Wrapper>
             <InnerWrapper>
+
+            <div ref={wrapperRef}> 
+                    <div onClick={menuHandler}>
+                            
+                    </div>
+                        {dropdownOpen  
+                            // && <ExpandedMenu/>
+                        }
+                </div>
+
                 <img src="./media/icons/house2.png" alt="house2" style={{margin:10}}/> Home 
                 <img src="./media/icons/arrow-down.png" alt="arrow-down" style={{marginLeft:150}}/>
                 <div>
@@ -55,27 +67,14 @@ export const TopBar: FC = () => {
                     <img src="./media/icons/bell.png" alt="bell" style={{margin:5, border:'1px solid gray', borderRadius: 50, padding: 5}}/>
                 </RightIcons>
 
-                <div ref={wrapperRef}> 
-                        <div onClick={menuHandler}>
-                            
-                        </div>
-                        {dropdownOpen  
-                            // && <expandedMenu/>
-                        }
-                    </div>
             </InnerWrapper>
         </Wrapper>
     )
 }
 
-export const ExpandMenu: FC = props => {
-    
+export const ExpandMenu: FC = () => {
         return(
-            <Wrapper>
-                <InnerWrapper>
-                    <CustomImg src="./media/icons/logo.png" alt="logo" />
-                </InnerWrapper>
-            </Wrapper>
+            <CustomImg src="./media/icons/menu.png" alt="menu" />
         )
 }
 
